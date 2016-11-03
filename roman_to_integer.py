@@ -15,7 +15,7 @@ class Solution(object):
         romanMap = {"I": 1, "V": 5, "X": 10, "L": 50, "C":100, "D": 500, "M": 1000}
         for i, l in enumerate(s):
             if 0 <= i < len(s) - 1 and romanMap[l] < romanMap[s[i+1]]:
-                    sum -= romanMap[l]
+                sum -= romanMap[l]
             else:
                 sum += romanMap[l]
         return sum
