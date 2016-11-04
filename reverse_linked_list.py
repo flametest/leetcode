@@ -35,8 +35,8 @@ if __name__ == '__main__':
     head = ListNode(1)
     head.next = ListNode(2)
     head.next.next = ListNode(3)
-    print Solution().reverseList(head)
-    while head:
-        print head.val
-        head = head.next
+    x = Solution().reverseList(head)
+    while x:
+        print x.val
+        x = x.next
 
