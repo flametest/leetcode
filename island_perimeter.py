@@ -31,6 +31,8 @@ class Solution(object):
                 continue
             if x != i and y != j:
                 continue
+            if x == i and y == j:
+                continue
             if grid[x][y] == 0:
                 zero_nums += 1
         if i == 0 or i == len(grid) - 1:
