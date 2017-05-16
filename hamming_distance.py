@@ -14,12 +14,11 @@ class Solution(object):
         :rtype: int
         """
         hamming_distance = 0
-        bin_x = bin(x)
-        bin_y = bin(y)
-        print bin_x, bin_y
+        bin_x = bin(x)[2:]
+        bin_y = bin(y)[2:]
         import itertools
-        for i, j in itertools.izip_longest(bin_x, bin_y, fillvalue=None):
-            print i, j
+        for i, j in itertools.izip_longest(reversed(bin_x),
+                                           reversed(bin_y), fillvalue='0'):
             if i != j:
                 hamming_distance += 1
         return hamming_distance
