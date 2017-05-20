@@ -22,20 +22,14 @@ class Solution(object):
         if o_r * o_c != r * c:
             return nums
         new_row = []
-        n = 0
         for i, row in enumerate(nums):
             for j, row_element in enumerate(row):
-                print c, n, row_element
-                if c >= n:
-                    new_row.append(row_element)
-                    n += 1
+                new_row.append(row_element)
+                if c > len(new_row):
+                    continue
                 else:
                     result_nums.append(new_row)
                     new_row = []
-                    n = 0
-        else:
-            result_nums.append(new_row)
-
         return result_nums
 
 
@@ -45,3 +39,4 @@ if __name__ == '__main__':
     print Solution().matrixReshape([[1, 2], [3, 4]], -1, 4)
     print Solution().matrixReshape([[1, 2], [3, 4]], 1, -4)
     print Solution().matrixReshape([], 1, 4)
+    print Solution().matrixReshape([[1, 2], [3, 4]], 4, 1)
