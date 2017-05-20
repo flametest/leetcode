@@ -14,11 +14,13 @@ class Solution(object):
         :rtype: List[int]
         """
         for index1, i in enumerate(numbers):
-            for index2, j in enumerate(numbers[index1:]):
-                if i + j == target and i != j:
-                    return [index1 + 1, index2 + 1]
+            for index2, j in enumerate(numbers[index1 + 1:]):
+                if i + j == target:
+                    return [index1 + 1, index1 + 1 + index2 + 1]
 
 
 if __name__ == '__main__':
     print Solution().twoSum([2, 7, 11, 15], 9)
     print Solution().twoSum([1, 2, 3, 4], 4)
+    print Solution().twoSum([2, 3, 4], 6)
+    print Solution().twoSum([5, 25, 75], 100)
