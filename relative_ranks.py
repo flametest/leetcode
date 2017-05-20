@@ -12,10 +12,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
-        nums = sorted(nums, reverse=True)
-        nums[0] = "Gold Medal"
-        nums[1] = "Silver Medal"
-        nums[2] = "Bronze Medal"
+        nums = sorted(nums)
+        for k, i in enumerate(nums):
+            if k == 0:
+                nums[k] = "Gold Medal"
+            elif k == 1:
+                nums[k] = "Silver Medal"
+            elif k == 2:
+                nums[k] = "Bronze Medal"
+            else:
+                nums[k] = k + 1
         return nums
 
 
