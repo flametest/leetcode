@@ -20,6 +20,8 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
+        if not root:
+            return 0
         return abs(self.node_sum(root.left) - self.node_sum(root.right))
 
     def node_sum(self, node):
