@@ -12,18 +12,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
-        nums = sorted(nums)
-        for k, i in enumerate(nums):
+        sorted_nums = sorted(nums, reverse=True)
+        for k, i in enumerate(sorted_nums):
+            index = nums.index(i)
             if k == 0:
-                nums[k] = "Gold Medal"
+                nums[index] = "Gold Medal"
             elif k == 1:
-                nums[k] = "Silver Medal"
+                nums[index] = "Silver Medal"
             elif k == 2:
-                nums[k] = "Bronze Medal"
+                nums[index] = "Bronze Medal"
             else:
-                nums[k] = k + 1
+                nums[index] = str(k + 1)
         return nums
 
 
 if __name__ == '__main__':
     print Solution().findRelativeRanks([5, 4, 3, 2, 1])
+    print Solution().findRelativeRanks([4, 3, 5, 2, 1])
+    print Solution().findRelativeRanks([])
