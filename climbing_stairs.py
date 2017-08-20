@@ -18,8 +18,11 @@ class Solution(object):
             return 1
         if n == 2:
             return 2
-        return self.climbStairs(n - 1) + self.climbStairs(n - 2)
+        a = b = 1
+        for _ in range(n):
+            a, b = b, a + b
+        return a
 
 
 if __name__ == '__main__':
-    print Solution().climbStairs(10)
+    print Solution().climbStairs(4)
