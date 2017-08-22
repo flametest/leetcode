@@ -20,27 +20,43 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        min_val = float("inf")
-        result = self.traverse_tree(root)
-        for k, i in enumerate(result):
-            for j in result[k + 1:]:
-                if abs(i - j) < min_val:
-                    min_val = abs(i - j)
+        return self.helper(root)
+
+    def helper(self, root, min_val=float("inf")):
+        if not root:
+            return min_val
+        if root.left:
+            right_most = self.find_right_most(root.left)
+            if root.val - right_most.val < min_val:
+                min_val = root.val - right_most.val
+        if root.right:
+            left_most = self.find_left_most(root.right)
+            if left_most.val - root.val < min_val:
+                min_val = left_most.val - root.val
+        min_val = min(self.helper(root.left, min_val),
+                      self.helper(root.right, min_val))
         return min_val
 
-    def traverse_tree(self, node):
-        result = []
-        if node.left:
-            result.extend(self.traverse_tree(node.left))
-        result.append(node.val)
-        if node.right:
-            result.extend(self.traverse_tree(node.right))
-        return result
+    def find_left_most(self, root):
+        if not root.left:
+            return root
+        return self.find_left_most(root.left)
+
+    def find_right_most(self, root):
+        if not root.right:
+            return root
+        return self.find_right_most(root.right)
 
 
 if __name__ == '__main__':
     a = TreeNode(1)
     a.right = TreeNode(3)
     a.right.left = TreeNode(2)
-    print Solution().traverse_tree(a)
+    print Solution().helper(a)
     print Solution().getMinimumDifference(a)
+    b = TreeNode(236)
+    b.left = TreeNode(104)
+    b.right = TreeNode(701)
+    b.left.right = TreeNode(227)
+    b.right.right = TreeNode(911)
+    print Solution().getMinimumDifference(b)
