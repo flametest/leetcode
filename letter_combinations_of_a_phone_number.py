@@ -35,9 +35,8 @@ class Solution(object):
         for k, l in enumerate(trans_list):
             if k == 0:
                 result = l
-            if k + 1 == len(trans_list):
-                break
-            result = self.combination(result, trans_list[k + 1])
+                continue
+            result = self.combination(result, trans_list[k])
         return result
 
     def combination(self, prev_l, curr_l):
