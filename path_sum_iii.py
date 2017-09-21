@@ -59,9 +59,9 @@ class Solution(object):
         mid_list = [i - node.val for i in mid_list]
         mid_list.append(sum)
         if node.left:
-            res += self.helper(node.left, sum - node.val, mid_list)
+            res += self.helper(node.left, sum, mid_list)
         if node.right:
-            res += self.helper(node.right, sum - node.val, mid_list)
+            res += self.helper(node.right, sum, mid_list)
         return res
 
 if __name__ == '__main__':
