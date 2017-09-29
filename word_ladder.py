@@ -96,6 +96,23 @@ class Solution(object):
         :type wordList: List[str]
         :rtype: int
         """
+        if endWord not in wordList:
+            return 0
+        import collections
+        import string
+        word_dict = dict.fromkeys(wordList + [endWord])
+        queue = collections.deque([[beginWord, 1]])
+        while queue:
+            word, length = queue.popleft()
+            if word == endWord:
+                return length
+            for i in range(len(word)):
+                for c in string.lowercase:
+                    next_word = word[:i] + c + word[i + 1:]
+                    if next_word in word_dict:
+                        word_dict.pop(next_word)
+                        queue.append([next_word, length + 1])
+        return 0
 
 
 
