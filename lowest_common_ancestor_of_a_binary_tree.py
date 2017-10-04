@@ -15,13 +15,13 @@ class TreeNode(object):
 
 
 class Solution(object):
-    def lowestCommonAncestor(self, root, p, q):
-        """
-        :type root: TreeNode
-        :type p: TreeNode
-        :type q: TreeNode
-        :rtype: TreeNode
-        """
+    # def lowestCommonAncestor(self, root, p, q):
+    #     """
+    #     :type root: TreeNode
+    #     :type p: TreeNode
+    #     :type q: TreeNode
+    #     :rtype: TreeNode
+    #     """
     #     if not root or not p or not q:
     #         return
     #     root_to_p = list(self.get_root_path(root, p))
@@ -66,6 +66,6 @@ if __name__ == '__main__':
     a.left.right.right = TreeNode(4)
     s = Solution()
     # gen = s.get_root_path(a, a.left.left)
-    print s.lowestCommonAncestor(a, a.left, a.right).val
+    # print s.lowestCommonAncestor(a, a.left, a.right).val
     print s.lowestCommonAncestor(a, a.left, a.left.right.right).val
-    print s.lowestCommonAncestor(None, None, None)
+    # print s.lowestCommonAncestor(None, None, None)
