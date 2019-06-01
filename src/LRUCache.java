@@ -66,6 +66,5 @@ public class LRUCache {
         obj.put(1, 1);
         obj.put(4, 1);
         obj.get(2);
-        System.out.println(obj);
     }
 }
