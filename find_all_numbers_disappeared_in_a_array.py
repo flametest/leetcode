@@ -13,12 +13,13 @@ class Solution(object):
         :rtype: List[int]
         """
         result = []
-        max_num = max(nums)
-        min_num = min(nums)
-        x = range(min_num, max_num + 1)
+        max_num = len(nums)
+        x = range(1, max_num + 1)
         result = list(set(x) - set(nums))
         return result
 
 
 if __name__ == '__main__':
     print Solution().findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1])
+    print Solution().findDisappearedNumbers([1, 1])
+    print Solution().findDisappearedNumbers([2, 2])
