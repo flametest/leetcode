@@ -1,8 +1,8 @@
 
 /**
  * @author: flametest
- * @date: 2020/11/13
- * @time: 18:59
+ * @date: 2021/11/23
+ * @time: 21:59
  * @description: 190. Reverse Bits
  */
 public class ReverseBits {
