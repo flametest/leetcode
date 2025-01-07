@@ -42,11 +42,28 @@ class Solution(object):
         return result
 
 
+class Solution1:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        r = 0
+        for i1 in range(len(s)):
+            d = {s[i1]: True}
+            l = 1
+            for i2 in range(i1 + 1, len(s)):
+                if s[i2] in d:
+                    break
+                d[s[i2]] = True
+                l += 1
+            if l > r:
+                r = l
+        return r
+
+
 if __name__ == '__main__':
     # print Solution().lengthOfLongestSubstring("")
     # print Solution().lengthOfLongestSubstring("c")
     # print Solution().lengthOfLongestSubstring("abcabcbb")
     # print Solution().lengthOfLongestSubstring("bbbbb")
-    print Solution().lengthOfLongestSubstring("pwwkew")
-    print Solution().lengthOfLongestSubstring("dvdf")
-    print Solution().lengthOfLongestSubstring("ibuwnuxdaudvevtbyntmduprwuvuvnbdrvcepzjswmnckidivxubrjspdplacmetkizbjktfzihjrltoknpdyhsdyf")
+    print(Solution1().lengthOfLongestSubstring("pwwkew"))
+    print(Solution1().lengthOfLongestSubstring("dvdf"))
+    print(Solution1().lengthOfLongestSubstring(
+        "ibuwnuxdaudvevtbyntmduprwuvuvnbdrvcepzjswmnckidivxubrjspdplacmetkizbjktfzihjrltoknpdyhsdyf"))
