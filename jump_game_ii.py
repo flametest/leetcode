@@ -14,6 +14,7 @@ class Solution:
             return 0
         path_list = []
         i = 0
+        # 总体思路是贪心算法 当前index对应的step范围内最大能够reachable的，然后依次计算；
         while i < goal:
             path_list.append(nums[i])
             step = nums[i]
