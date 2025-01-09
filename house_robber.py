@@ -4,6 +4,7 @@
 # @Author  : Jun Jiang (flametest@gmail.com)
 # @Link    : http://example.org
 # @Version : $Id$
+from typing import List
 
 
 class Solution(object):
@@ -21,6 +22,21 @@ class Solution(object):
         return max(rob, not_rob)
 
 
+class Solution1(object):
+    def rob(self, nums: List[int]) -> int:
+        rob = 0
+        not_rob = 0
+        for num in nums:
+            temp = rob
+            # 如果选择抢当前这家，那么更新rob，在此之前先保存rob
+            rob = max(not_rob + num, rob)
+            # 如果选择不抢这家，那么更新not_rob位之前的rob
+            not_rob = temp
+        return rob
+
+
 if __name__ == '__main__':
     s = Solution()
-    print s.rob([2, 4, 5, 6, 7, 9])
+    print(s.rob([2, 4, 5, 6, 7, 9]))
+    s1 = Solution1()
+    print(s.rob([2, 4, 5, 6, 7, 9]))
