@@ -39,12 +39,27 @@ class Solution(object):
         return len(t) - len(d.keys()) + 1
 
 
+class Solution1:
+    def longestPalindrome(self, s: str) -> int:
+        count = dict()
+        res = 0
+
+        for c in s:
+            count[c] += 1
+            if count[c] % 2 == 0:
+                res += 2
+        for v in count.values():
+            if v % 2 == 1:
+                res += 1
+                break
+        return res
 
 
 if __name__ == '__main__':
-    print Solution().longestPalindrome("abccccdd")
-    print Solution().longestPalindrome("")
-    print Solution().longestPalindrome("ccc")
-    print Solution().longestPalindrome("bcccaaaaadd")
-    print Solution().longestPalindrome("civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth")
+    print(Solution1().longestPalindrome("abccccdd"))
+    print(Solution1().longestPalindrome(""))
+    print(Solution1().longestPalindrome("ccc"))
+    print(Solution1().longestPalindrome("bcccaaaaadd"))
+    print(Solution1().longestPalindrome(
+        "civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth"))
     # print Solution().longestSub(["c", "c", "c", "a", "a", "a", "a", "a" ])
