@@ -4,6 +4,7 @@
 # @Author  : Jun Jiang (flametest@gmail.com)
 # @Link    : http://example.org
 # @Version : $Id$
+from typing import List
 
 
 class Solution(object):
@@ -34,13 +35,18 @@ class Solution(object):
         self.dfs(grid, x, y + 1)
 
 
+class Solution1:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        pass
+
+
 if __name__ == '__main__':
     s = Solution()
-    print s.numIslands([list("11110"),
+    print(s.numIslands([list("11110"),
                         list("11010"),
                         list("11000"),
-                        list("00000")])
-    print s.numIslands([list("11000"),
+                        list("00000")]))
+    print(s.numIslands([list("11000"),
                         list("11000"),
                         list("00100"),
-                        list("00011")])
+                        list("00011")]))
