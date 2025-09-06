@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date    : 2017-09-29 09:55:15
 # @Author  : Jun Jiang (flametest@gmail.com)
